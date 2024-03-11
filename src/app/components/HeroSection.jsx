@@ -66,10 +66,10 @@ const HeroSection = () => {
                 .neon-glow {
                     position: absolute;
                     content: '';
-                    top: -2px;
-                    left: -2px;
-                    right: -2px;
-                    bottom: -2px;
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    bottom: 0px;
                     z-index: -1;
                     border-radius: inherit;
                     background-color: transparent;
