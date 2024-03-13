@@ -3,15 +3,15 @@ import React, { useState } from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
-
-
 const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
 
     return (
         <section className='lg:py-16'>
             <div className='grid grid-cols-1 sm:grid-cols-12'>
-                <div className='col-span-8 place-self-center text-center sm:text-left justify-self-start'>
+                <div
+                    className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
+                >
                     <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold'>
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600'>Hello, I'm{" "}</span>
                         <br></br>
@@ -34,16 +34,18 @@ const HeroSection = () => {
                     <p className='text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolore unde consequuntur nam placeat rerum vitae explicabo corrupti. Rem laborum iste commodi fuga expedita possimus esse necessitatibus eligendi obcaecati debitis.</p>
                     <div>
                         <button 
-                        className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:transform hover:scale-105 hover:bg-slate-200 text-white'
-                        onMouseEnter={() => setIsButtonHovered(true)}
-                        onMouseLeave={() => setIsButtonHovered(false)}>
-                                Hire Me
-                                <span className="neon-glow"></span>
+                            className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:transform hover:scale-105 hover:bg-slate-200 text-white'
+                            onMouseEnter={() => setIsButtonHovered(true)}
+                            onMouseLeave={() => setIsButtonHovered(false)}
+                        >
+                            Hire Me
+                            <span className="neon-glow"></span>
                         </button>
                         <button 
-                        className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:transform hover:scale-105 hover:bg-slate-800 text-white mt-3'
-                        onMouseEnter={() => setIsButtonHovered(true)}
-                        onMouseLeave={() => setIsButtonHovered(false)}>
+                            className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:transform hover:scale-105 hover:bg-slate-800 text-white mt-3'
+                            onMouseEnter={() => setIsButtonHovered(true)}
+                            onMouseLeave={() => setIsButtonHovered(false)}
+                        >
                             <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>Download CV</span>
                             <span className="neon-glow"></span>
                         </button>
