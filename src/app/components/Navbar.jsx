@@ -10,18 +10,15 @@ const Navbar = () => {
     return (
         <>
         <nav className="bg-[#121212]">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center">
-                        <div className="flex-shrink-0">
-                            <a href="/" className="text-white"
-                            >
-                                Logo
-                            </a>
-                        </div>
+            <div className="flex container justify-between mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16 w-full">
+                    <div className="flex-shrink-0">
+                        <a href="/" className="md:text-2xl text-white font-semibold">
+                            Vinícius Rodrigues
+                        </a>
                     </div>
-                    <div className="hidden md:block">
-                        <div className="ml-4 flex items-center space-x-4">
+                    <div className="hidden md:block flex-grow">
+                        <div className="ml-4 flex items-center space-x-4 justify-end">
                             <a 
                                 href="/"
                                 className="text-white hover:bg-white hover:text-black rounded-lg p-2"
@@ -32,7 +29,7 @@ const Navbar = () => {
                                 href="/"
                                 className="text-white hover:bg-white hover:text-black rounded-lg p-2"
                             >
-                                Abount
+                                About
                             </a>
                             <a 
                                 href="#about"
@@ -75,12 +72,12 @@ const Navbar = () => {
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
                                     >
-                  
                                         <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16m-7 6h7"/>
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M4 6h16M4 12h16m-7 6h7"
+                                        />
                                     </svg>
                                 )}
                         </button>
@@ -100,7 +97,7 @@ const Navbar = () => {
                             href="/"
                             className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
                         >
-                            Abount
+                            About
                         </a>
                         <a 
                             href="/"
