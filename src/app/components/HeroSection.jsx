@@ -36,7 +36,7 @@ const HeroSection = () => {
     const isStandard = isStandardScreen();
 
     return (
-        <section id= "home" className="h-screen">
+        <section id= "home" className={`h-screen ${!isStandard ? 'mt-40': ''}`}>
             <div className='grid grid-cols-1 sm:grid-cols-12'>
                 <div
                     className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
