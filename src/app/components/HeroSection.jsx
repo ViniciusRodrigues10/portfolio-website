@@ -3,9 +3,13 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import ScrollDownAnimation from "./ScrollDownAnimation";
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
 const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
+    const { scrollY } = useViewportScroll();
+    const opacity = useTransform(scrollY, [0, 550], [1, 0]);
+
 
     const isStandardScreen = () => {
         const [isStandard, setIsStandard] = useState(true);
@@ -78,7 +82,8 @@ const HeroSection = () => {
                         </button>
                     </div>
                 </div>
-                <div className='col-span-4 place-self-center mt-4 lg:mt-0'>
+                <div 
+                    className='col-span-4 place-self-center mt-4 lg:mt-0'>
                     <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative'>
                         <Image 
                             src='/images/hero-image.png'
@@ -90,15 +95,11 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            {isStandard ? (
-                <div className="hidden md:flex justify-center items-center absolute bottom-4 left-0 w-full">
-                    <ScrollDownAnimation />
-                </div>
-            ) : (
-                <div className="hidden md:flex justify-center items-center absolute bottom-24 left-0 w-full">
-                    <ScrollDownAnimation />
-                </div>
-            )}
+            <motion.div
+                style={{ opacity: opacity }} 
+                className={`hidden md:flex justify-center items-center absolute ${isStandard ? 'mt-20' : 'mt-40'} left-0 w-full`}>
+                <ScrollDownAnimation />
+            </motion.div>
             <style jsx>{`
                 .neon-glow {
                     position: absolute;
