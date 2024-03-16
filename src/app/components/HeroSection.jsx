@@ -1,13 +1,42 @@
 "use client";
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
+import ScrollDownAnimation from "./ScrollDownAnimation";
 
 const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
 
+    const isStandardScreen = () => {
+        const [isStandard, setIsStandard] = useState(true);
+      
+        useEffect(() => {
+          const handleResize = () => {
+            const standardScreenWidth = 1920;
+            const ultraWideScreenWidth = 2560;
+      
+            
+            const windowWidth = window.innerWidth;
+      
+            
+            setIsStandard(windowWidth <= standardScreenWidth);
+          };
+      
+          handleResize();
+          window.addEventListener('resize', handleResize);
+      
+          return () => {
+            window.removeEventListener('resize', handleResize);
+          };
+        }, []);
+      
+        return isStandard;
+    };
+
+    const isStandard = isStandardScreen();
+
     return (
-        <section className='lg:py-16'>
+        <section id= "home" className="h-screen">
             <div className='grid grid-cols-1 sm:grid-cols-12'>
                 <div
                     className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
@@ -20,8 +49,6 @@ const HeroSection = () => {
                                 "Vinicius",
                                 1000,
                                 "Web Developer",
-                                1000,
-                                "Mobile Developer",
                                 1000,
                                 "UI/UX Designer",
                                 1000,
@@ -61,9 +88,17 @@ const HeroSection = () => {
                             height={300}
                         />
                     </div>
-                    
                 </div>
             </div>
+            {isStandard ? (
+                <div className="hidden md:flex justify-center items-center absolute bottom-4 left-0 w-full">
+                    <ScrollDownAnimation />
+                </div>
+            ) : (
+                <div className="hidden md:flex justify-center items-center absolute bottom-24 left-0 w-full">
+                    <ScrollDownAnimation />
+                </div>
+            )}
             <style jsx>{`
                 .neon-glow {
                     position: absolute;
@@ -78,7 +113,7 @@ const HeroSection = () => {
                     box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 0, 222, 0.5), 0 0 75px rgba(255, 0, 222, 0.5), 0 0 100px rgba(255, 0, 222, 0.5);
                 }
 
-                @media only screen and (max-width: 640px) {
+                @media only screen and (max-width: 768px) {
                     .neon-glow {
                         display: none;
                     }
