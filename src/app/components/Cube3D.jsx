@@ -2,10 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from '../../../styles/Cube3d.module.scss';
 import {
-    faAngular,
-    faCss3,
-    faGitAlt,faHtml5,
+    faPython,
     faJsSquare,
+    faHtml5,
+    faCss3,
+    faGitAlt,
     faReact,
 } from '@fortawesome/free-brands-svg-icons';
 
@@ -15,7 +16,7 @@ const CubeComponent = () => {
 
     <div className={styles.cubespinner}>
         <div className={styles.face1}>
-            <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+            <FontAwesomeIcon icon={faPython} color="#DD0031" />
         </div>
         <div className={styles.face2}>
             <FontAwesomeIcon icon={faHtml5} color="#F06529" />
