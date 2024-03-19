@@ -10,19 +10,15 @@ const HeroSection = () => {
     const { scrollY } = useViewportScroll();
     const opacity = useTransform(scrollY, [0, 550], [1, 0]);
 
-
     const isStandardScreen = () => {
         const [isStandard, setIsStandard] = useState(true);
       
         useEffect(() => {
           const handleResize = () => {
             const standardScreenWidth = 1920;
-            const ultraWideScreenWidth = 2560;
-      
             
             const windowWidth = window.innerWidth;
       
-            
             setIsStandard(windowWidth <= standardScreenWidth);
           };
       
