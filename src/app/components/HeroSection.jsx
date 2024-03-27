@@ -33,6 +33,16 @@ const HeroSection = () => {
         return isStandard;
     };
 
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop,
+                behavior: "smooth"
+            });
+        }
+    }
+
     const isStandard = isStandardScreen();
 
     return (
@@ -64,6 +74,7 @@ const HeroSection = () => {
                             className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:transform hover:scale-105 hover:bg-slate-200 text-white'
                             onMouseEnter={() => setIsButtonHovered(true)}
                             onMouseLeave={() => setIsButtonHovered(false)}
+                            onClick={() => scrollToSection('contact')} 
                         >
                             Hire Me
                             <span className="neon-glow"></span>
@@ -73,7 +84,13 @@ const HeroSection = () => {
                             onMouseEnter={() => setIsButtonHovered(true)}
                             onMouseLeave={() => setIsButtonHovered(false)}
                         >
-                            <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>Download CV</span>
+                            <a 
+                                href="https://drive.google.com/file/d/1x1QWVScU1ZgEg90_KmlizJfgLs-6P-67/view?usp=sharing"
+                                target="_blank"
+                                className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'
+                            >
+                                Download CV
+                            </a>
                             <span className="neon-glow"></span>
                         </button>
                     </div>
@@ -107,14 +124,22 @@ const HeroSection = () => {
                     z-index: -1;
                     border-radius: inherit;
                     background-color: transparent;
-                    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 0, 222, 0.5), 0 0 75px rgba(255, 0, 222, 0.5), 0 0 100px rgba(255, 0, 222, 0.5);
+                    box-shadow: 
+                        0 0 5px rgba(255, 255, 255, 0.5), 
+                        0 0 15px rgba(255, 255, 255, 0.5), 
+                        0 0 30px rgba(255, 255, 255, 0.5), 
+                        0 0 50px rgba(0, 128, 128, 0.5), /* Cor mista de azul e verde */
+                        0 0 75px rgba(0, 128, 128, 0.5), /* Cor mista de azul e verde */
+                        0 0 100px rgba(0, 128, 128, 0.5); /* Cor mista de azul e verde */
                 }
-
+                
                 @media only screen and (max-width: 768px) {
                     .neon-glow {
                         display: none;
                     }
                 }
+                
+                
             `}</style>
         </section>
     );
