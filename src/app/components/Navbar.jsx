@@ -60,7 +60,7 @@ const Navbar = () => {
                 <div className="flex container mx-auto px-4 sm:px-6 lg:px-8 ">
                     <div className="flex items-center justify-between h-16 w-full">
                         <div className="flex-shrink-0">
-                            <a href="/" className="md:text-2xl text-white font-semibold">
+                            <a href="https://www.linkedin.com/in/viniciusgonzagacavalcante" target="_blank" className="md:text-2xl text-white font-semibold">
                                 Vinícius Rodrigues
                             </a>
                         </div>
