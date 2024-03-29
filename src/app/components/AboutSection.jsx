@@ -2,6 +2,8 @@
 import React, { useTransition, useState, useEffect } from "react";
 import TabButton from "./TabButton";
 import Cube3D from "./Cube3D";
+import Lottie from 'react-lottie';
+import CubeAnimation from '../../../public/assets/LottieJson/CubeAnimation.json'
 
 const TAB_DATA = [
     {
@@ -78,9 +80,22 @@ const AboutSection = () => {
     return (
         <section id="about" className="mt-20 text-white">
             <div className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 sm:py-16 xl:px-16">
-                <div className={`h-full mt-60 ${ isMid ?  'mb-80' : ''}`}> 
-                    <Cube3D />
-                </div>
+                {!isMid ? (
+                    <div className={`h-full mt-60`}> 
+                        <Cube3D />
+                    </div>
+                ) : (
+                    <div>
+                        <Lottie
+                            options={{
+                                loop: true,
+                                autoplay: true,
+                                animationData: CubeAnimation
+                            }}
+                            width={250} height={250}
+                        />
+                    </div>
+                )}
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
                     <h2 className="text-4xl font-bold text-white mb-4">About</h2>
                     <p className="text-base lg:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid ipsa eaque ea nisi explicabo ullam, quod at alias? Laboriosam quod quaerat ut nobis quas eveniet ad provident asperiores, cum illo.</p>
