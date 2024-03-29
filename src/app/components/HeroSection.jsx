@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 import ScrollDownAnimation from "./ScrollDownAnimation";
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import Lottie from 'react-lottie';
+import RubiksCubeAnimation from '../../../public/assets/LottieJson/RubiksCubeAnimation.json'
 
 const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -47,6 +48,16 @@ const HeroSection = () => {
 
     return (
         <section id= "home" className={`h-screen ${!isStandard ? 'mt-40': ''}`}>
+            <div className="sm:hidden">
+                <Lottie
+                    options={{
+                        loop: true,
+                        autoplay: true,
+                        animationData: RubiksCubeAnimation
+                    }}
+                    width={250} height={250}
+                />
+            </div>
             <div className='grid grid-cols-1 sm:grid-cols-12'>
                 <div
                     className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
@@ -56,11 +67,9 @@ const HeroSection = () => {
                         <br></br>
                         <TypeAnimation
                             sequence={[
-                                "Vinicius",
+                                "Vinícius",
                                 1000,
                                 "Web Developer",
-                                1000,
-                                "UI/UX Designer",
                                 1000,
                             ]}
                             wrapper="span"
@@ -95,17 +104,15 @@ const HeroSection = () => {
                         </button>
                     </div>
                 </div>
-                <div 
-                    className='col-span-4 place-self-center mt-4 lg:mt-0'>
-                    <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative'>
-                        <Image 
-                            src='/images/hero-image.png'
-                            alt='hero image'
-                            className='absolute transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2'
-                            width={300}
-                            height={300}
-                        />
-                    </div>
+                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden sm:block'>
+                    <Lottie
+                        options={{
+                            loop: true,
+                            autoplay: true,
+                            animationData: RubiksCubeAnimation
+                        }}
+                        width={450} height={450}
+                    />
                 </div>
             </div>
             <motion.div
@@ -113,6 +120,7 @@ const HeroSection = () => {
                 className={`hidden md:flex justify-center items-center absolute ${isStandard ? 'mt-20' : 'mt-40'} left-0 w-full`}>
                 <ScrollDownAnimation />
             </motion.div>
+
             <style jsx>{`
                 .neon-glow {
                     position: absolute;
