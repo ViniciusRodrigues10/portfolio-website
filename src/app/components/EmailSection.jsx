@@ -5,6 +5,7 @@ import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/SocialIcons.module.css";
+import LoadingSpinner from "./LoadingSpinner"
 
 const EmailSection = () => {
     const [formData, setFormData] = useState({
@@ -15,7 +16,8 @@ const EmailSection = () => {
     });
 
     const [emailSubmitted, setEmailSubmitted] = useState(false);
-
+    const [isLoading, setIsLoading] = useState(false);
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -26,6 +28,8 @@ const EmailSection = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault(); 
+        setIsLoading(true);
+
         const response = await fetch('/api/send', {
             method: 'POST',
             headers: {
@@ -39,6 +43,7 @@ const EmailSection = () => {
         if (response.status === 200) {
             console.log('Message sent.');
             setEmailSubmitted(true);
+            setIsLoading(false);
         }
     };
     
@@ -107,6 +112,7 @@ const EmailSection = () => {
                         name="subject"
                         type="text"
                         id="subject"
+                        required
                         value={formData.subject}
                         onChange={handleChange}
                         className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
@@ -124,6 +130,7 @@ const EmailSection = () => {
                         type="text"
                         name="message"
                         id="message"
+                        required
                         value={formData.message}
                         onChange={handleChange}
                         className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
@@ -132,9 +139,10 @@ const EmailSection = () => {
                 </div>
                 <button
                     type="submit"
-                    className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+                    className={`rounded-lg w-full ${isLoading ? 'bg-primary-900 font-medium py-2.5 px-5' : 'bg-primary-600 hover:bg-primary-900 text-white font-medium py-2.5 px-5'}`}
+                    disabled={isLoading}
                 >
-                    Send Message    
+                    {isLoading ? <LoadingSpinner />: "Send Message"}
                 </button>
                 {
                     emailSubmitted && (
