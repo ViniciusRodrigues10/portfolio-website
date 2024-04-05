@@ -1,0 +1,8 @@
+.iconWrapper {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.iconWrapper:hover {
+    transform: scale(1.2);
+}
