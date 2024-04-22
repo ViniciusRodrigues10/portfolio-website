@@ -61,7 +61,7 @@ const Navbar = () => {
                     <div className="flex items-center justify-between h-16 w-full">
                         <div className="flex-shrink-0">
                             <a href="https://www.linkedin.com/in/viniciusgonzagacavalcante" target="_blank" className="md:text-2xl text-white font-semibold">
-                                Vinícius Rodrigues
+                                Vinícius
                             </a>
                         </div>
                         <div className={`hidden md:block flex-grow ${isMobile ? 'hidden' : ''}`}>
