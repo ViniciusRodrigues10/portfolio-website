@@ -1,13 +1,14 @@
 "use client";
 import React, { useEffect, useState } from 'react'
+import Lottie from 'react-lottie';
 import { TypeAnimation } from 'react-type-animation';
 import ScrollDownAnimation from "./ScrollDownAnimation";
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import Lottie from 'react-lottie';
 import RubiksCubeAnimation from '../../../public/assets/LottieJson/RubiksCubeAnimation.json'
 
 const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const { scrollY } = useViewportScroll();
     const opacity = useTransform(scrollY, [0, 550], [1, 0]);
 
@@ -34,6 +35,21 @@ const HeroSection = () => {
         return isStandard;
     };
 
+    useEffect(() => {
+        const mobileScreenWidth = 768;
+        const handleWindowResize = () => {
+          setIsMobile(window.innerWidth < mobileScreenWidth);
+        };
+        
+        handleWindowResize(); // Chama a função uma vez para definir o estado inicial
+
+        window.addEventListener('resize', handleWindowResize);
+
+        return () => {
+        window.removeEventListener('resize', handleWindowResize);
+        };
+    }, []);
+
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -47,7 +63,7 @@ const HeroSection = () => {
     const isStandard = isStandardScreen();
 
     return (
-        <section id= "home" className={`h-screen ${!isStandard ? 'mt-40': ''}`}>
+        <section id= "home" className={`${!isStandard ? 'h-screen mt-40' : !isMobile ? 'h-screen' : ''}`}>
             <div className="sm:hidden">
                 <Lottie
                     options={{
@@ -63,7 +79,10 @@ const HeroSection = () => {
                     className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
                 >
                     <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold'>
-                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600'>Hello, I'm{" "}</span>
+                        <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600'
+                        >
+                            Hello, I'm{" "}
+                        </span>
                         <br></br>
                         <TypeAnimation
                             sequence={[
@@ -77,7 +96,7 @@ const HeroSection = () => {
                             repeat={Infinity}
                         />
                     </h1>
-                    <p className='text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos dolore unde consequuntur nam placeat rerum vitae explicabo corrupti. Rem laborum iste commodi fuga expedita possimus esse necessitatibus eligendi obcaecati debitis.</p>
+                    <p style={{ fontSize: '18px' }} className='text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl'>" Existem duas maneiras de construir um projeto de software. Uma é fazê-lo tão simples que obviamente não há falhas. A outra é fazê-lo tão complicado que não existem falhas óbvias. "<br />- C.A.R. HOAR</p>
                     <div>
                         <button 
                             className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:transform hover:scale-105 hover:bg-slate-200 text-white'
@@ -85,7 +104,7 @@ const HeroSection = () => {
                             onMouseLeave={() => setIsButtonHovered(false)}
                             onClick={() => scrollToSection('contact')} 
                         >
-                            Hire Me
+                            Contrate-me
                             <span className="neon-glow"></span>
                         </button>
                         <button 
@@ -104,7 +123,7 @@ const HeroSection = () => {
                         </button>
                     </div>
                 </div>
-                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden sm:block'>
+                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden sm:block xs:hidden'>
                     <Lottie
                         options={{
                             loop: true,
