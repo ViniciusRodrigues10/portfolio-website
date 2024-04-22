@@ -6,6 +6,8 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../../styles/SocialIcons.module.css";
 import LoadingSpinner from "./LoadingSpinner"
+import Lottie from 'react-lottie';
+import SendEmail from '../../../public/assets/LottieJson/SendEmail.json'
 
 const EmailSection = () => {
     const [formData, setFormData] = useState({
@@ -51,12 +53,24 @@ const EmailSection = () => {
     <section id="contact" className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
         <div className='absolute w-80 h-80 z-0'></div>
         <div className='z-10'>
-            <h5 className='text-xl font-bold text-white my-2'>Entre em Contato</h5>
-            <p className='text-[#ADB7BE] mb-4 max-w-md'>
+            <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 ml-24 md:ml-28">Entre em Contato</h5>
+            <div className='flex justify-center'>
+                <div className="mr-0 lg:mr-36">
+                    <Lottie
+                        options={{
+                            loop: true,
+                            autoplay: true,
+                            animationData: SendEmail
+                        }}
+                        width={200} height={200}
+                    />
+                </div>
+            </div>
+            <p className='text-[#ADB7BE] mb-4 max-w-md text-center md:text-left'>
                 {" "}   
                 Quer iniciar um projeto, discutir uma ideia ou simplesmente trocar algumas palavras? Estou aqui para ajudar! Você também pode me contratar para trabalhos freelance ou oportunidades de emprego. Entre em contato comigo e vamos transformar sua visão em realidade.
             </p>
-            <div className='social flex flex-row gap-2'>
+            <div className='social flex flex-row gap-2 mt-6 justify-center items-center md:justify-start md:items-start'>
                 <Link href="https://github.com/ViniciusRodrigues10" target="_blank">
                     <div className={styles.iconWrapper}>
                         <Image src={GithubIcon} alt="Github Icon" className={styles.icon} />
@@ -73,7 +87,7 @@ const EmailSection = () => {
             <form onSubmit={handleSubmit} className='flex flex-col'>
                 <div className='mb-6'>
                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-white">
-                        Name
+                        Nome
                     </label>
                     <input 
                         name="name"
@@ -83,12 +97,12 @@ const EmailSection = () => {
                         value={formData.name}
                         onChange={handleChange}
                         className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5" 
-                        placeholder='Your name'
+                        placeholder='Seu nome'
                     />
                 </div>
                 <div className='mb-6'>
                     <label htmlFor="clientEmail" className="block mb-2 text-sm font-medium text-white">
-                        Your email
+                        Seu melhor email
                     </label>
                     <input 
                         name="clientEmail"
@@ -98,7 +112,7 @@ const EmailSection = () => {
                         value={formData.clientEmail}
                         onChange={handleChange}
                         className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5" 
-                        placeholder='jacob@google.com'
+                        placeholder='jose@gmail.com'
                     />
                 </div>
                 <div className="mb-6">
@@ -106,7 +120,7 @@ const EmailSection = () => {
                         htmlFor="subject" 
                         className="block mb-2 text-sm font-medium text-white"
                     >
-                        Subject
+                        Assunto
                     </label>
                     <input
                         name="subject"
@@ -116,7 +130,7 @@ const EmailSection = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
-                        placeholder="Just saying hi"
+                        placeholder="Coloque um título para sua mensagem"
                     /> 
                 </div>
                 <div className='mb-6'>
@@ -124,7 +138,7 @@ const EmailSection = () => {
                         htmlFor="message"
                         className="block mb-2 text-sm font-medium text-white"
                     >
-                        Message
+                        Mensagem
                     </label>
                     <input 
                         type="text"
@@ -134,7 +148,7 @@ const EmailSection = () => {
                         value={formData.message}
                         onChange={handleChange}
                         className="bg-gray-[#18191E] border border-[#33353F] bg-[#18191E] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg  block w-full p-2.5"
-                        placeholder="Let's talk about..." 
+                        placeholder="Vamos falar sobre..." 
                     />
                 </div>
                 <button
