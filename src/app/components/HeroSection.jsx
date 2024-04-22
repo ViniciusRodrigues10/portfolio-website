@@ -41,7 +41,7 @@ const HeroSection = () => {
           setIsMobile(window.innerWidth < mobileScreenWidth);
         };
         
-        handleWindowResize(); // Chama a função uma vez para definir o estado inicial
+        handleWindowResize(); 
 
         window.addEventListener('resize', handleWindowResize);
 
