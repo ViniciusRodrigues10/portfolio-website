@@ -78,10 +78,10 @@ const AboutSection = () => {
     }
 
     return (
-        <section id="about" className="mt-20 text-white">
+        <section id="about" className="text-white mt-20">
             <div className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 sm:py-16 xl:px-16">
                 {!isMid ? (
-                    <div className={`h-full mt-60`}> 
+                    <div className="h-full mt-60"> 
                         <Cube3D />
                     </div>
                 ) : (
