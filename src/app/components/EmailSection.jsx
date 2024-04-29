@@ -55,7 +55,7 @@ const EmailSection = () => {
         <div className='z-10'>
             <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 ml-24 md:ml-28">Entre em Contato</h5>
             <div className='flex justify-center'>
-                <div className="mr-0 lg:mr-36">
+                <div className="mr-0 md:mr-36 2xl:mr-72">
                     <Lottie
                         options={{
                             loop: true,
