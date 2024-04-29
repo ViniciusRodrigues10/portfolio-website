@@ -113,7 +113,7 @@ const HeroSection = () => {
                             onMouseLeave={() => setIsButtonHovered(false)}
                         >
                             <a 
-                                href="https://drive.google.com/file/d/1x1QWVScU1ZgEg90_KmlizJfgLs-6P-67/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1cNwKL1VXQ33vyZl5qlukN276A2e_McGo/view?usp=sharing"
                                 target="_blank"
                                 className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'
                             >
