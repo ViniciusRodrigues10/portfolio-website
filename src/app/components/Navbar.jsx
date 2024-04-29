@@ -76,19 +76,19 @@ const Navbar = () => {
                                     onClick={() => scrollToSection('about')}
                                     className="text-white hover:bg-white hover:text-black rounded-lg p-2"
                                 >
-                                    About
+                                    Sobre
                                 </button>
                                 <button
                                     onClick={() => scrollToSection('projects')}
                                     className="text-white hover:bg-white hover:text-black rounded-lg p-2"
                                 >
-                                    Projects
+                                    Projetos
                                 </button>
                                 <button 
                                     onClick={() => scrollToSection('contact')}
                                     className="text-white hover:bg-white hover:text-black rounded-lg p-2"
                                 >
-                                    Contact
+                                    Contato
                                 </button>
                             </div>
                         </div>
