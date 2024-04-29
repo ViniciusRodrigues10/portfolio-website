@@ -142,9 +142,6 @@ export async function POST(request, response) {
     <body>
 
       <div class="container">
-        <div class="logo">
-          <img src='https://drive.google.com/file/d/1QCJzpN9205vV8AR-X_5JT18Iz444u2N2/view?usp=sharing' width="200">
-        </div>
         <h1>Olá ${clientName},</h1>
         <p>Agradeço por entrar em contato. Estou empolgado para termos uma conversa mais detalhada.</p>
         <p>Comprometo-me a fornecer uma resposta o mais rápido possível.</p>
