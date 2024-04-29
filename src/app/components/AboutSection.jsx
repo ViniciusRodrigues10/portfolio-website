@@ -11,32 +11,51 @@ const TAB_DATA = [
         id: "skills",
         content: (
             <ul className="list-disc pl-2">
-                <li>Node.js</li>
-                <li>Node.js</li>
-                <li>Node.js</li>
-                <li>Node.js</li>
-                <li>Node.js</li>
-                <li>Node.js</li>
+                <li>
+                    <span className="font-bold">Front-End:</span>{" "}
+                    <span>HTML · CSS · NextJS · React</span>
+                </li>
+                <li>
+                    <span className="font-bold">Back-End:</span>{" "}
+                    <span>Django · NestJS · Fastify</span>
+                </li>
+                <li>
+                    <span className="font-bold">Banco de Dados:</span>{" "}
+                    <span>MongoDB · MySQL · PostgresSQL</span>
+                </li>
+                <li>
+                    <span className="font-bold">Linguagens:</span>{" "}
+                    <span>Python · Java · C/C++ · TypeScript · JavaScript</span>
+                </li>
+                <li>
+                    <span className="font-bold">Tecnologias:</span>{" "}
+                    <span>Amazon Web Services · Docker · Git · Github · Gitlab · Grafana · Linux · Windows</span>
+                </li>
             </ul>
         )
     },
     {
-        title: "Education",
-        id: "education",
+        title: "Formation",
+        id: "formation",
         content: (
             <ul className="list-disc pl-2">
-                <li>Fullstack Academy of COde</li>
-                <li>University of California, Santa Cruz</li>
+                <li>
+                    <span>Engenharia de Computação,</span>{" "}
+                    <span className="font-bold">Instituto Federal da Paraíba</span>
+                </li>
+                <li>
+                    <span>Técnico em suporte e manutenção em informática,</span>{" "}
+                    <span className="font-bold">SENAI</span>{" "}
+                </li>
             </ul>
         )
     },
     {
-        title: "Certifications",
-        id: "certifications",
+        title: "Certificações",
+        id: "certificações",
         content: (
             <ul className="list-disc pl-2">
-                <li>AWS</li>
-                <li>Google Professional Cloud Developer</li>
+                <li className="font-bold">Scrum</li>
             </ul>
         )
     },
@@ -78,7 +97,7 @@ const AboutSection = () => {
     }
 
     return (
-        <section id="about" className="text-white mt-20">
+        <section id="about" className="text-white sm:mt-0 mt-20 min-h-[930px] xl:min-h-[700px]">
             <div className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 sm:py-16 xl:px-16">
                 {!isMid ? (
                     <div className="h-full mt-60"> 
@@ -97,20 +116,20 @@ const AboutSection = () => {
                     </div>
                 )}
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
-                    <h2 className="text-4xl font-bold text-white mb-4">About</h2>
-                    <p className="text-base lg:text-lg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid ipsa eaque ea nisi explicabo ullam, quod at alias? Laboriosam quod quaerat ut nobis quas eveniet ad provident asperiores, cum illo.</p>
+                    <h2 className="text-4xl font-bold text-white mb-4">Sobre</h2>
+                    <p className="text-base lg:text-lg">Com três anos no mercado financeiro, desenvolvi e implementei robôs para câmbio e CFDs, além de contribuir na BM&FBovespa. Tenho amplo conhecimento em Python, Java, JavaScript, TypeScript e C/C++, capacitando-me a oferecer soluções robustas. Recentemente, tenho focado no desenvolvimento web. Estou em busca de desafios estimulantes para aplicar minha experiência e habilidades, contribuindo para o sucesso e a inovação de novos projetos.</p>
                     <div className="flex flex-row justify-start mt-8">
                         <TabButton selecTab={() => handleTabChange("skills")} active={tab === "skills"}>
                             {" "}
                             Skills{" "}
                         </TabButton>
-                        <TabButton selecTab={() => handleTabChange("education")} active={tab === "education"}>
+                        <TabButton selecTab={() => handleTabChange("formation")} active={tab === "formation"}>
                             {" "}
-                            Education{" "}
+                            Formação{" "}
                         </TabButton>
-                        <TabButton selecTab={() => handleTabChange("certifications")} active={tab === "certifications"}>
+                        <TabButton selecTab={() => handleTabChange("certificações")} active={tab === "certificações"}>
                             {" "}
-                            Certifications{" "}
+                            Certificações{" "}
                         </TabButton>
                     </div>
                     <div className="mt-8">{TAB_DATA.find((t) => t.id === tab).content}</div>
