@@ -1,8 +1,5 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
-import smoothscroll from 'smoothscroll-polyfill';
-
-smoothscroll.polyfill();
 
 const Navbar = () => {
     const closeNavbar = () => {
