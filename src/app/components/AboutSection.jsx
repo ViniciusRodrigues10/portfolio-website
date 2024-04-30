@@ -1,5 +1,5 @@
 "use client"
-import React, { useTransition, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import TabButton from "./TabButton";
 import Cube3D from "./Cube3D";
 import Lottie from 'react-lottie';
@@ -63,56 +63,42 @@ const TAB_DATA = [
 
 const AboutSection = () => {
     const [tab, setTab] = useState("skills");
-    const [isPending, startTransition] = useTransition();
+    const [isMid, setIsMid] = useState(true);
 
-    const isMidScreen = () => {
-        const [isMid, setisMid] = useState(true);
-      
-        useEffect(() => {
-          const handleResize = () => {
+    useEffect(() => {
+        const handleResize = () => {
             const midScreenWidth = 768;
-      
             const windowWidth = window.innerWidth;
-      
-            setisMid(windowWidth <= midScreenWidth);
-          };
-      
-          handleResize();
-          window.addEventListener('resize', handleResize);
-      
-          return () => {
-            window.removeEventListener('resize', handleResize);
-          };
-        }, []);
-      
-        return isMid;
-    };
+            setIsMid(windowWidth <= midScreenWidth);
+        };
 
-    const isMid = isMidScreen();
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const handleTabChange = (id) => {
-        startTransition(() => {
-            setTab(id);
-        });
+        setTab(id);
     }
 
     return (
         <section id="about" className="text-white sm:mt-0 mt-20 min-h-[930px] xl:min-h-[700px]">
             <div className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 sm:py-16 xl:px-16">
-                {!isMid ? (
+                {isMid ? (
+                    <Lottie
+                        options={{
+                            loop: true,
+                            autoplay: true,
+                            animationData: CubeAnimation
+                        }}
+                        width={250} height={250}
+                    />
+                ) : (
                     <div className="h-full mt-60"> 
                         <Cube3D />
-                    </div>
-                ) : (
-                    <div>
-                        <Lottie
-                            options={{
-                                loop: true,
-                                autoplay: true,
-                                animationData: CubeAnimation
-                            }}
-                            width={250} height={250}
-                        />
                     </div>
                 )}
                 <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
