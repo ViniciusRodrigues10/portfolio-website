@@ -146,7 +146,7 @@ export async function POST(request, response) {
         <p>Agradeço por entrar em contato. Estou empolgado para termos uma conversa mais detalhada.</p>
         <p>Comprometo-me a fornecer uma resposta o mais rápido possível.</p>
         <p>Se surgirem dúvidas adicionais ou se desejar fornecer mais informações, sinta-se à vontade para responder a este e-mail.</p>
-        <a href="/" class="button"><span>Visite meu site</span></a>
+        <a href="https://portfolio-vinicius-rodrigues.netlify.app/" class="button"><span>Visite meu site</span></a>
         <div class="signature">
           <p>Atenciosamente,<br>Vinícius Gonzaga Cavalcante Rodrigues<br>Engenheiro de Software
         </div>
