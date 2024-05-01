@@ -164,6 +164,6 @@ export async function POST(request, response) {
 
     return NextResponse.json({message: "Email enviado"}, {status: 200});
   } catch (error) {
-    return NextResponse.json({ message: "Failed to send" }, {status: 500});
+    return NextResponse.json({ message: "Falha ao enviar" }, {status: 500});
   } 
 }
