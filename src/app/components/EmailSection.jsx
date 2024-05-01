@@ -156,12 +156,12 @@ const EmailSection = () => {
                     className={`rounded-lg w-full ${isLoading ? 'bg-primary-900 font-medium py-2.5 px-5' : 'bg-primary-600 hover:bg-primary-900 text-white font-medium py-2.5 px-5'}`}
                     disabled={isLoading}
                 >
-                    {isLoading ? <LoadingSpinner />: "Send Message"}
+                    {isLoading ? <LoadingSpinner />: "Enviar mensagem"}
                 </button>
                 {
                     emailSubmitted && (
                         <p className="text-green-500 text-sm mt-2">
-                            Email sent sucessfully!
+                            E-mail enviado com sucesso!
                         </p>
                     )
                 }
