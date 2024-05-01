@@ -4,6 +4,12 @@ import AboutSection from "./components/AboutSection";
 import ProjectSection from "./components/ProjectSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vinícius Rodrigues",
+  description: "Portfolio Vinícius Rodrigues"
+}
 
 export default function Home() {
   return (
