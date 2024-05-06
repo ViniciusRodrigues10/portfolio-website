@@ -8,7 +8,6 @@ import RubiksCubeAnimation from '../../../public/assets/LottieJson/RubiksCubeAni
 
 const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
     const { scrollY } = useViewportScroll();
     const opacity = useTransform(scrollY, [0, 550], [1, 0]);
 
@@ -35,21 +34,6 @@ const HeroSection = () => {
         return isStandard;
     };
 
-    useEffect(() => {
-        const mobileScreenWidth = 768;
-        const handleWindowResize = () => {
-          setIsMobile(window.innerWidth < mobileScreenWidth);
-        };
-        
-        handleWindowResize(); 
-
-        window.addEventListener('resize', handleWindowResize);
-
-        return () => {
-        window.removeEventListener('resize', handleWindowResize);
-        };
-    }, []);
-
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -63,7 +47,7 @@ const HeroSection = () => {
     const isStandard = isStandardScreen();
 
     return (
-        <section id= "home" className={`${!isStandard ? 'h-screen mt-40' : !isMobile ? 'h-screen' : ''}`}>
+        <section id= "home" className='xl:h-screen xl:flex xl:justify-center xl:items-center'>
             <div className="sm:hidden">
                 <Lottie
                     options={{
@@ -123,7 +107,7 @@ const HeroSection = () => {
                         </button>
                     </div>
                 </div>
-                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden sm:block xs:hidden'>
+                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden sm:block'>
                     <Lottie
                         options={{
                             loop: true,
