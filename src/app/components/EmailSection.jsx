@@ -53,7 +53,11 @@ const EmailSection = () => {
     <section id="contact" className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
         <div className='absolute w-80 h-80 z-0'></div>
         <div className='z-10'>
-            <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 ml-24 md:ml-28">Entre em Contato</h5>
+            {/* <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 ml-24 md:ml-28">Entre em Contato</h5> */}
+            {/* <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 text-center md:text-left md:ml-28">Entre em Contato</h5> */}
+            {/* <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 md:text-left md:ml-28 text-center">Entre em Contato</h5> */}
+            <h5 className="text-2xl font-bold text-white mb-6 md:mb-0 md:col-span-2 md:text-left ml-4 md:ml-28 text-center">Entre em Contato</h5>
+
             <div className='flex justify-center'>
                 <div className="mr-0 md:mr-36 2xl:mr-72">
                     <Lottie
