@@ -47,7 +47,7 @@ const HeroSection = () => {
     const isStandard = isStandardScreen();
 
     return (
-        <section id= "home" className='xl:h-screen xl:flex xl:justify-center xl:items-center'>
+        <section id= "home" className='xl:h-screen 2xl:flex 2xl:justify-center 2xl:items-center'>
             <div className="sm:hidden">
                 <Lottie
                     options={{
@@ -120,7 +120,7 @@ const HeroSection = () => {
             </div>
             <motion.div
                 style={{ opacity: opacity }} 
-                className={`hidden md:flex justify-center items-center absolute ${isStandard ? 'mt-16' : 'mt-40'} left-0 w-full`}>
+                className={`hidden md:flex justify-center items-center absolute bottom-2 left-0 w-full`}>
                 <ScrollDownAnimation />
             </motion.div>
 
