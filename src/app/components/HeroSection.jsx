@@ -120,7 +120,7 @@ const HeroSection = () => {
             </div>
             <motion.div
                 style={{ opacity: opacity }} 
-                className={`hidden md:flex justify-center items-center absolute bottom-2 left-0 w-full`}>
+                className={`hidden md:flex justify-center items-center absolute bottom-4 left-0 w-full`}>
                 <ScrollDownAnimation />
             </motion.div>
 
