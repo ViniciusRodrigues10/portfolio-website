@@ -141,19 +141,19 @@ const Navbar = () => {
                                 onClick={() => {scrollToSection('about'); closeNavbar();}}
                                 className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
                             >
-                                About
+                                Sobre
                             </a>
                             <a 
                                 onClick={() => {scrollToSection('projects'); closeNavbar();}}
                                 className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
                             >
-                                Projects
+                                Projetos
                             </a>
                             <a 
                                 onClick={() => {scrollToSection('contact'); closeNavbar();}}
                                 className="text-white block hover:bg-white hover:text-black rounded-lg p-2"
                             >
-                                Contact
+                                Contato
                             </a>
                         </div>
                     </div>
