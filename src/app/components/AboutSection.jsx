@@ -85,7 +85,7 @@ const AboutSection = () => {
     }
 
     return (
-        <section id="about" className="text-white mt-20 lg:mt-40 xl:mt-2 min-h-[930px] xl:min-h-[700px]">
+        <section id="about" className="text-white mt-20 lg:mt-40 xl:mt-2">
             <div className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 sm:py-16 xl:px-16">
                 {isMid ? (
                     <Lottie
