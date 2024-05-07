@@ -85,7 +85,7 @@ const AboutSection = () => {
     }
 
     return (
-        <section id="about" className="text-white mt-20 lg:mt-40 xl:mt-2">
+        <section id="about" className="text-white mt-20 lg:mt-40 xl:mt-2"> 
             <div className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 sm:py-16 xl:px-16">
                 {isMid ? (
                     <Lottie
@@ -97,7 +97,7 @@ const AboutSection = () => {
                         width={250} height={250}
                     />
                 ) : (
-                    <div className="h-full mt-60"> 
+                    <div className="h-full mt-60 md:ml-48 xl:ml-60 2xl:ml-14"> 
                         <Cube3D />
                     </div>
                 )}
