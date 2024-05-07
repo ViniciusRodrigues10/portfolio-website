@@ -1,8 +1,8 @@
 .down
 {
     position: relative;
-    width: 25px;
-    height: 40px;
+    width: 22px;
+    height: 35px;
     border-radius: 15px;
     background: transparent;
     border: 1px solid #ffff;
@@ -41,7 +41,7 @@
 {
     0%
     {
-        transform: translate(-50%, 10px);
+        transform: translate(-50%, 12px);
         opacity: 0;
     }
     80%
