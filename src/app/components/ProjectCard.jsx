@@ -6,8 +6,7 @@ import Link from "next/link";
 const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
 
     const handleMouseMove = (e) => {
-        if (window.innerWidth > 768) {
-            const card = e.currentTarget;
+        const card = e.currentTarget;
             const centerX = card.offsetWidth / 2;
             const centerY = card.offsetHeight / 2;
             const mouseX = e.clientX - card.getBoundingClientRect().left;
@@ -18,16 +17,13 @@ const ProjectCard = ({ imgUrl, title, description, gitUrl, previewUrl }) => {
 
             card.style.transition = 'none';
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05) translateY(0)`;
-        }
     };
 
     const handleMouseLeave = (e) => {
-        if (window.innerWidth > 768) {
-            const card = e.currentTarget;
+        const card = e.currentTarget;
 
             card.style.transition = 'transform 0.5s ease';
             card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1) translateY(0)';
-        }
     };
 
     return (
