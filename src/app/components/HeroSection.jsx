@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Lottie from 'react-lottie';
 import { TypeAnimation } from 'react-type-animation';
+import { useWindowSize } from '@react-hook/window-size';
+import { useMediaQuery } from 'react-responsive';
 import ScrollDownAnimation from "./ScrollDownAnimation";
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import RubiksCubeAnimation from '../../../public/assets/LottieJson/RubiksCubeAnimation.json'
@@ -10,6 +12,8 @@ const HeroSection = () => {
     const [isButtonHovered, setIsButtonHovered] = useState(false);
     const { scrollY } = useViewportScroll();
     const opacity = useTransform(scrollY, [0, 550], [1, 0]);
+    const [width, height] = useWindowSize();
+    const isMobile = useMediaQuery({ maxWidth: 1400 });
 
     const isStandardScreen = () => {
         const [isStandard, setIsStandard] = useState(true);
@@ -45,9 +49,9 @@ const HeroSection = () => {
     }
 
     const isStandard = isStandardScreen();
-
+    
     return (
-        <section id= "home" className='xl:h-screen 2xl:flex 2xl:justify-center 2xl:items-center'>
+        <section id= "home" className='xl:h-screen xl:flex xl:justify-center xl:items-center'>
             <div className="sm:hidden">
                 <Lottie
                     options={{
@@ -62,7 +66,7 @@ const HeroSection = () => {
                 <div
                     className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
                 >
-                    <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold'>
+                    <h1 className='text-white mb-4 text-3xl md:text-5xl lg:text-7xl xl:text-8xl lg:leading-normal font-extrabold'>
                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600'
                         >
                             Hello, I'm{" "}
@@ -114,14 +118,17 @@ const HeroSection = () => {
                             autoplay: true,
                             animationData: RubiksCubeAnimation
                         }}
-                        width={450} height={450}
+                        style={{
+                            width: ['100%', '100%', '450px', '600px'],
+                            height: ['100%', '100%', '450px', '600px'], 
+                        }}
                     />
                 </div>
             </div>
             <motion.div
                 style={{ opacity: opacity }} 
-                className={`hidden md:flex justify-center items-center absolute bottom-4 left-0 w-full`}>
-                <ScrollDownAnimation />
+                className={`lg:flex justify-center items-center absolute bottom-4 left-0 w-full ${isMobile ? 'hidden' : ''}`}>
+                    <ScrollDownAnimation />
             </motion.div>
 
             <style jsx>{`
