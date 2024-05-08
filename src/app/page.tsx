@@ -8,7 +8,10 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Vinícius Rodrigues",
-  description: "Portfolio Vinícius Rodrigues"
+  description: "Portfolio Vinícius Rodrigues",
+  icons: {
+    icon: "./favicon.ico",
+  },
 }
 
 export default function Home() {
