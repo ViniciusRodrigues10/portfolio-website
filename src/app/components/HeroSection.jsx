@@ -13,7 +13,7 @@ const HeroSection = () => {
     const { scrollY } = useViewportScroll();
     const opacity = useTransform(scrollY, [0, 550], [1, 0]);
     const [width, height] = useWindowSize();
-    const isMobile = useMediaQuery({ maxWidth: 1400 });
+    const isMobile = useMediaQuery({ maxWidth: 1024 });
 
     const isStandardScreen = () => {
         const [isStandard, setIsStandard] = useState(true);
@@ -127,7 +127,7 @@ const HeroSection = () => {
             </div>
             <motion.div
                 style={{ opacity: opacity }} 
-                className={`lg:flex justify-center items-center absolute bottom-4 left-0 w-full ${isMobile ? 'hidden' : ''}`}>
+                className='lg:flex justify-center items-center absolute bottom-4 left-0 w-full hidden'>
                     <ScrollDownAnimation />
             </motion.div>
 
