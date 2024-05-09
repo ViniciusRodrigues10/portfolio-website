@@ -52,7 +52,7 @@ const HeroSection = () => {
     
     return (
         <section id= "home" className='xl:h-screen xl:flex xl:justify-center xl:items-center'>
-            <div className="sm:hidden">
+            <div className="lg:hidden">
                 <Lottie
                     options={{
                         loop: true,
@@ -62,7 +62,7 @@ const HeroSection = () => {
                     width={250} height={250}
                 />
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-12'>
+            <div className='grid grid-cols-1 lg:grid-cols-12'>
                 <div
                     className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
                 >
@@ -111,7 +111,7 @@ const HeroSection = () => {
                         </button>
                     </div>
                 </div>
-                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden sm:block'>
+                <div className='col-span-4 place-self-center mt-4 lg:mt-0 hidden lg:block'>
                     <Lottie
                         options={{
                             loop: true,
