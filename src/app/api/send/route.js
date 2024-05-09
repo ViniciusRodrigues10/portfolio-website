@@ -159,6 +159,12 @@ export async function POST(request, response) {
 
 
   try {
+    const regex = /\.com$/;
+
+    if (!(regex.test(clientEmail))) {
+      return NextResponse.json({ message: "Falha ao enviar, é necessário adicionar o .com ao final do email" }, {status: 400});
+    }
+
     await transporter.sendMail(mailOptions);
     await transporter.sendMail(mailOptionsClient);
 
