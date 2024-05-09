@@ -10,6 +10,10 @@ import Lottie from 'react-lottie';
 import SendEmail from '../../../public/assets/LottieJson/SendEmail.json'
 
 const EmailSection = () => {
+    const [emailSubmitted, setEmailSubmitted] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const [attemptToSendEmail, setaAtemptToSendEmail] = useState(false);
+
     const [formData, setFormData] = useState({
         name: '',
         clientEmail: '',
@@ -17,9 +21,6 @@ const EmailSection = () => {
         message: ''
     });
 
-    const [emailSubmitted, setEmailSubmitted] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -43,9 +44,15 @@ const EmailSection = () => {
         console.log(await response.json())
 
         if (response.status === 200) {
-            console.log('Message sent.');
+            console.log('Message send.');
             setEmailSubmitted(true);
             setIsLoading(false);
+            setaAtemptToSendEmail(true);
+        } else if (response.status !== 200) {
+            console.log('Message not sent');
+            setEmailSubmitted(false);
+            setIsLoading(false);
+            setaAtemptToSendEmail(true);
         }
     };
     
@@ -115,7 +122,7 @@ const EmailSection = () => {
                         value={formData.clientEmail}
                         onChange={handleChange}
                         className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5" 
-                        placeholder='jose@gmail.com'
+                        placeholder='Ex: jose@gmail.com'
                     />
                 </div>
                 <div className="mb-6">
@@ -161,13 +168,17 @@ const EmailSection = () => {
                 >
                     {isLoading ? <LoadingSpinner />: "Enviar mensagem"}
                 </button>
-                {
-                    emailSubmitted && (
+                {attemptToSendEmail && (
+                    emailSubmitted ? (
                         <p className="text-green-500 text-sm mt-2">
                             E-mail enviado com sucesso!
                         </p>
+                    ) : (
+                        <p className="text-red-500 text-sm mt-2">
+                            Erro ao enviar o email. Confira o endereço de email e tente novamente.
+                        </p>
                     )
-                }
+                )}
             </form>
         </div>    
     </section>
