@@ -45,7 +45,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [HTML5](https://ebaconline.com.br/blog/o-que-e-html5-seo)
 - [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 - [SCSS](https://sass-lang.com/)
-- [JavaScript]([https://www.prisma.io/](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript))
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Nodemailer](https://www.nodemailer.com/)
   
