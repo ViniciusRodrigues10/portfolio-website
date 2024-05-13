@@ -10,7 +10,7 @@ const projectsData = [
     title: "React Portfolio Website",
     description: "Descubra minha trajetória, projetos e habilidades no meu portfólio.",
     image: "/images/projects/website-portfolio.png",
-    tag: ["Todos", "Frontend", "Backend"],
+    tag: ["Fullstack", "Frontend", "Backend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/portfolio-website/tree/main",
     previewUrl: "https://portfolio-vinicius-rodrigues.netlify.app/"
   },
@@ -19,7 +19,7 @@ const projectsData = [
     title: "X-men",
     description: "Explore os poderes dos X-Men neste site simples e informativo.",
     image: "/images/projects/x-men.png",
-    tag: ["Todos", "Frontend"],
+    tag: ["Frontend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/x-men",
     previewUrl: "https://viniciusrodrigues10.github.io/x-men/"
   },
@@ -28,7 +28,7 @@ const projectsData = [
     title: "DevSteam",
     description: "Clone da Steam para descobrir, comprar e jogar jogos de PC.",
     image: "/images/projects/devsteam.png",
-    tag: ["Todos", "Frontend"],
+    tag: ["Frontend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/steam/tree/main",
     previewUrl: "https://replica-steam.netlify.app/"
   },
@@ -37,7 +37,7 @@ const projectsData = [
     title: "Landing Page Confresso BH",
     description: "Landing page para congresso: detalhes de palestrantes e tudo sobre o evento.",
     image: "/images/projects/landing-page-congresso-bh.png",
-    tag: ["Todos", "Frontend"],
+    tag: ["Frontend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/landing-page-congresso-bh",
     previewUrl: "https://darling-klepon-4573e1.netlify.app/"
   },
@@ -46,7 +46,7 @@ const projectsData = [
     title: "Real Time Polls",
     description: "Sistema de votação em tempo real: seguras e escaláveis.",
     image: "/images/projects/real-time-polls.png",
-    tag: ["Todos", "Backend"],
+    tag: ["Backend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/real-time-polls",
     previewUrl: "/"
   },
@@ -55,7 +55,7 @@ const projectsData = [
     title: "Vehicle Tracking",
     description: "Rastreamento de veículos com roteamento otimizado para logística.",
     image: "/images/projects/vehicle-tracking.png",
-    tag: ["Todos", "Frontend", "Backend"],
+    tag: ["Fullstack", "Frontend", "Backend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/vehicle-tracking",
     previewUrl: "/"
   },
@@ -64,7 +64,7 @@ const projectsData = [
     title: "Study Async",
     description: "Educação personalizada com interação e monitoramento.",
     image: "/images/projects/study-async.png",
-    tag: ["Todos", "Frontend", "Backend"],
+    tag: ["Fullstack", "Frontend", "Backend"],
     gitUrl: "https://github.com/ViniciusRodrigues10/study-psw",
     previewUrl: "/"
   },
@@ -96,11 +96,6 @@ const ProjectSection = () => {
       <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
         <ProjectTag
           onClick={handleTagChange}
-          name="Todos"
-          isSelected={tag === "Todos"}
-        />
-        <ProjectTag
-          onClick={handleTagChange}
           name="Frontend"
           isSelected={tag === "Frontend"}
         />
@@ -108,6 +103,11 @@ const ProjectSection = () => {
           onClick={handleTagChange}
           name="Backend"
           isSelected={tag === "Backend"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Fullstack"
+          isSelected={tag === "Fullstack"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
