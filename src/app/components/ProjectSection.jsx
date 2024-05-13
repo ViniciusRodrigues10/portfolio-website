@@ -8,55 +8,64 @@ const projectsData = [
   {
     id: 1,
     title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
-    previewUrl: "/"
+    description: "Descubra minha trajetória, projetos e habilidades no meu portfólio.",
+    image: "/images/projects/website-portfolio.png",
+    tag: ["Todos", "Frontend", "Backend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/portfolio-website/tree/main",
+    previewUrl: "https://portfolio-vinicius-rodrigues.netlify.app/"
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
-    previewUrl: "/"
+    title: "X-men",
+    description: "Explore os poderes dos X-Men neste site simples e informativo.",
+    image: "/images/projects/x-men.png",
+    tag: ["Todos", "Frontend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/x-men",
+    previewUrl: "https://viniciusrodrigues10.github.io/x-men/"
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
-    previewUrl: "/"
+    title: "DevSteam",
+    description: "Clone da Steam para descobrir, comprar e jogar jogos de PC.",
+    image: "/images/projects/devsteam.png",
+    tag: ["Todos", "Frontend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/steam/tree/main",
+    previewUrl: "https://replica-steam.netlify.app/"
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["Todos", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/"
+    title: "Landing Page Confresso BH",
+    description: "Landing page para congresso: detalhes de palestrantes e tudo sobre o evento.",
+    image: "/images/projects/landing-page-congresso-bh.png",
+    tag: ["Todos", "Frontend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/landing-page-congresso-bh",
+    previewUrl: "https://darling-klepon-4573e1.netlify.app/"
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
+    title: "Real Time Polls",
+    description: "Sistema de votação em tempo real: seguras e escaláveis.",
+    image: "/images/projects/real-time-polls.png",
+    tag: ["Todos", "Backend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/real-time-polls",
     previewUrl: "/"
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["Todos", "Web"],
-    gitUrl: "/",
+    title: "Vehicle Tracking",
+    description: "Rastreamento de veículos com roteamento otimizado para logística.",
+    image: "/images/projects/vehicle-tracking.png",
+    tag: ["Todos", "Frontend", "Backend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/vehicle-tracking",
+    previewUrl: "/"
+  },
+  {
+    id: 7,
+    title: "Study Async",
+    description: "Educação personalizada com interação e monitoramento.",
+    image: "/images/projects/study-async.png",
+    tag: ["Todos", "Frontend", "Backend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/study-psw",
     previewUrl: "/"
   },
 ];
@@ -92,13 +101,13 @@ const ProjectSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Web"
-          isSelected={tag === "Web"}
+          name="Frontend"
+          isSelected={tag === "Frontend"}
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="Backend"
+          isSelected={tag === "Backend"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
