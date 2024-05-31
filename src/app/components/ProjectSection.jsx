@@ -6,6 +6,15 @@ import { motion, useInView} from "framer-motion";
 
 const projectsData = [
   {
+    id: 8,
+    title: "Market Clock",
+    description: "Market Clock exibe horários das principais bolsas de valores.",
+    image: "/images/projects/market-clock-portfolio.png",
+    tag: ["Frontend"],
+    gitUrl: "https://github.com/ViniciusRodrigues10/market-clock",
+    previewUrl: "https://market-clock.netlify.app/"
+  },
+  {
     id: 1,
     title: "React Portfolio Website",
     description: "Descubra minha trajetória, projetos e habilidades no meu portfólio.",
