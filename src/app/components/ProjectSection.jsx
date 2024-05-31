@@ -15,7 +15,7 @@ const projectsData = [
     previewUrl: "https://market-clock.netlify.app/"
   },
   {
-    id: 1,
+    id: 7,
     title: "React Portfolio Website",
     description: "Descubra minha trajetória, projetos e habilidades no meu portfólio.",
     image: "/images/projects/website-portfolio.png",
@@ -24,7 +24,7 @@ const projectsData = [
     previewUrl: "https://portfolio-vinicius-rodrigues.netlify.app/"
   },
   {
-    id: 2,
+    id: 6,
     title: "X-men",
     description: "Explore os poderes dos X-Men neste site simples e informativo.",
     image: "/images/projects/x-men.png",
@@ -33,7 +33,7 @@ const projectsData = [
     previewUrl: "https://viniciusrodrigues10.github.io/x-men/"
   },
   {
-    id: 3,
+    id: 5,
     title: "DevSteam",
     description: "Clone da Steam para descobrir, comprar e jogar jogos de PC.",
     image: "/images/projects/devsteam.png",
@@ -51,7 +51,7 @@ const projectsData = [
     previewUrl: "https://darling-klepon-4573e1.netlify.app/"
   },
   {
-    id: 5,
+    id: 3,
     title: "Real Time Polls",
     description: "Sistema de votação em tempo real: seguras e escaláveis.",
     image: "/images/projects/real-time-polls.png",
@@ -60,7 +60,7 @@ const projectsData = [
     previewUrl: "/"
   },
   {
-    id: 6,
+    id: 2,
     title: "Vehicle Tracking",
     description: "Rastreamento de veículos com roteamento otimizado para logística.",
     image: "/images/projects/vehicle-tracking.png",
@@ -69,7 +69,7 @@ const projectsData = [
     previewUrl: "/"
   },
   {
-    id: 7,
+    id: 1,
     title: "Study Async",
     description: "Educação personalizada com interação e monitoramento.",
     image: "/images/projects/study-async.png",
